@@ -4,9 +4,9 @@
   <p class="meta">{{ .Date.Format "Jan 2, 2006" }}
     {{ if not .Site.Params.disableReadingTime }} - {{ .ReadingTime }} minute read {{ end }}
     {{- /*   
-    {{ if or .Site.Config.Services.Disqus.Shortname .Site.DisqusShortname }} - <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
-    */ -}}
-    {{ if or (isset .Site.Config.Services.Disqus "shortname") (isset .Site "disqusshortname") }} - <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
+    {{ if or .Site.Config.Services.Disqus.Shortname (isset .Site "disqusshortname") }} - <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
+
+    {{- /* {{ if or (isset .Site.Config.Services.Disqus "shortname") (isset .Site "disqusshortname") }} - <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }} */ -}}
 
 
     {{ if isset .Params "categories" }}
